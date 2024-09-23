@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Page</title>
+</head>
+<body>
+<h1>GitHub 정보</h1>
+<p>GitHub ID: <span th:text="${userInfo.id}"></span></p>
+<p>사용자명: <span th:text="${userInfo.login}"></span></p>
+<p>전체 이름: <span th:text="${userInfo.name}"></span></p>
+<p>이메일: <span th:text="${userInfo.email}"></span></p>
+<p>프로필 사진: <img th:src="${userInfo.avatar_url}" alt="Profile Picture"/></p>
+<p>가입 날짜: <span th:text="${userInfo.created_at}"></span></p>
+<p>최종 업데이트: <span th:text="${userInfo.updated_at}"></span></p>
+<p>팔로우 수: <span th:text="${userInfo.following}"></span></p>
+<p>팔로워 수: <span th:text="${userInfo.followers}"></span></p>
+<form action="/logout" method="post" th:action="@{/logout}">
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+    <button type="submit">로그아웃</button>
+</form>
+</body>
+</html>
