@@ -5,26 +5,26 @@ import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDateTime;
 
-// WccgRepository Entity
+// (wccg) 리포지토리
 @Entity
-@Table(name = "repository")
+@Table(name = "wccg_repository")
 @Getter
 @Setter
 public class WccgRepository {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id") // 리포지토리 ID
-    private Integer id;
+    @Column(name = "id") // 리포지토리 id
+    private int id;
 
-    @Column(name = "name") // 리포지토리 이름
+    @Column(name = "name", nullable = false, length = 100) // 이름
     private String name;
 
-    @Column(name = "owner") // 소유자
+    @Column(name = "owner", nullable = false, length = 39) // 소유자 (조직용이면 조직 이름 / 사용자면 사용자 이름)
     private String owner;
 
-    @Column(name = "created_at", nullable = false) // 생성일
+    @Column(name = "created_at", nullable = false) // 등록일
     private LocalDateTime createdAt;
 
-    @Column(name = "is_active", nullable = false) // 활성 상태
+    @Column(name = "is_active", nullable = false) // 활성화 여부
     private Boolean isActive;
 }

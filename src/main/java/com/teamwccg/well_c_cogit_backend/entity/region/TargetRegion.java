@@ -1,10 +1,11 @@
 package com.teamwccg.well_c_cogit_backend.entity.region;
 
+import com.teamwccg.well_c_cogit_backend.entity.Enum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-// TargetRegion Entity
+// 타겟 지역
 @Entity
 @Table(name = "target_region")
 @Getter
@@ -12,15 +13,16 @@ import lombok.Setter;
 public class TargetRegion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id") // 타겟 지역 ID
-    private Integer id;
+    @Column(name = "id", nullable = false) // 타겟 지역 id
+    private int id;
 
-    @Column(name = "region_id") // 지역 ID
-    private Integer regionId;
+    @Column(name = "region_id", nullable = false) // 지역 id
+    private int regionId;
 
-    @Column(name = "target_id") // 대상 ID (회원 또는 모임)
-    private Integer targetId;
+    @Column(name = "target_id", nullable = false) // 타겟 id (회원 또는 모임)
+    private int targetId;
 
-    @Column(name = "type") // 유형 (ENUM: 회원, 모임)
-    private String type;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type", nullable = false) // 유형 (ENUM: 회원, 모임)
+    private Enum.targetType type;
 }

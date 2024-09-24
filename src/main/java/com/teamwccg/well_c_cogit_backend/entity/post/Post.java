@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDateTime;
 
-// Post Entity
+// 게시글
 @Entity
 @Table(name = "post")
 @Getter
@@ -13,18 +13,18 @@ import java.time.LocalDateTime;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id") // 게시글 ID
-    private Integer id;
+    @Column(name = "id", nullable = false) // 게시글 id
+    private int id;
 
-    @Column(name = "group_id") // 그룹 ID
-    private Integer groupId;
+    @Column(name = "group_id", nullable = false) // 모임 id
+    private int groupId;
 
-    @Column(name = "user_id") // 사용자 ID
-    private Integer userId;
+    @Column(name = "user_id", nullable = false) // 회원 id
+    private int userId;
 
-    @Column(name = "content", nullable = false) // 게시글 내용
+    @Column(name = "content", nullable = false, length = 200) // 내용
     private String content;
 
-    @Column(name = "created_at", nullable = false) // 생성일
+    @Column(name = "created_at", nullable = false) // 등록일
     private LocalDateTime createdAt;
 }

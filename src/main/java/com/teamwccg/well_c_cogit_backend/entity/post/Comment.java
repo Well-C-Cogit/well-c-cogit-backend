@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDateTime;
 
-// Comment Entity
+//댓글
 @Entity
 @Table(name = "comment")
 @Getter
@@ -13,18 +13,18 @@ import java.time.LocalDateTime;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id") // 댓글 ID
-    private Integer id;
+    @Column(name = "id", nullable = false) // 댓글 id
+    private int id;
 
-    @Column(name = "post_id") // 게시글 ID
-    private Integer postId;
+    @Column(name = "post_id", nullable = false) // 게시글 id
+    private int postId;
 
-    @Column(name = "user_id") // 사용자 ID
+    @Column(name = "user_id", nullable = false, length = 39) // 회원 id
     private String userId;
 
-    @Column(name = "content", nullable = false) // 댓글 내용
+    @Column(name = "content", nullable = false, length = 50) // 내용
     private String content;
 
-    @Column(name = "created_at", nullable = false) // 생성일
+    @Column(name = "created_at", nullable = false) // 등록일
     private LocalDateTime createdAt;
 }

@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDateTime;
 
-// UserGroup Entity
+// 회원 모임
 @Entity
 @Table(name = "user_group")
 @Getter
@@ -13,15 +13,15 @@ import java.time.LocalDateTime;
 public class UserGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id") // 사용자 그룹 ID
-    private Integer id;
+    @Column(name = "id", nullable = false) // 회원 모임 id
+    private int id;
 
-    @Column(name = "user_id") // 사용자 ID
-    private String userId;
+    @Column(name = "user_id", nullable = false) // 회원 id
+    private int userId;
 
-    @Column(name = "group_id") // 그룹 ID
-    private Integer groupId;
+    @Column(name = "group_id", nullable = false) // 모임 id
+    private int groupId;
 
-    @Column(name = "created_at", nullable = false) // 생성일
+    @Column(name = "created_at", nullable = false) // 등록일
     private LocalDateTime createdAt;
 }

@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDateTime;
 
-// Token Entity
+// 토큰
 @Entity
 @Table(name = "token")
 @Getter
@@ -13,15 +13,15 @@ import java.time.LocalDateTime;
 public class Token {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id") // 토큰 ID
-    private Integer id;
+    @Column(name = "id", nullable = false) // 토큰 id
+    private int id;
 
-    @Column(name = "user_id") // 사용자 ID
-    private Integer userId;
+    @Column(name = "user_id", nullable = false) // 회원 id
+    private int userId;
 
-    @Column(name = "access_token", nullable = false) // 액세스 토큰
+    @Column(name = "access_token", nullable = false, length = 255) // 액세스 토큰
     private String accessToken;
 
-    @Column(name = "created_at", nullable = false) // 생성일
+    @Column(name = "created_at", nullable = false) // 등록일
     private LocalDateTime createdAt;
 }
