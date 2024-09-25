@@ -19,9 +19,6 @@ public class WccgGroup {
     @Column(name = "id", nullable = false) // 모임 id
     private int id;
 
-    @Column(name = "active_region_id", nullable = false) // 활동 지역 id
-    private int activeRegionId;
-
     @Column(name = "group_master_id", nullable = false) // 모임장 id
     private int groupMasterId;
 

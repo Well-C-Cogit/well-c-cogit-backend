@@ -19,8 +19,8 @@ public class Comment {
     @Column(name = "post_id", nullable = false) // 게시글 id
     private int postId;
 
-    @Column(name = "user_id", nullable = false, length = 39) // 회원 id
-    private String userId;
+    @Column(name = "user_id", nullable = false) // 회원 id
+    private int userId;
 
     @Column(name = "content", nullable = false, length = 50) // 내용
     private String content;

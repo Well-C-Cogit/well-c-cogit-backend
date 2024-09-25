@@ -18,9 +18,6 @@ public class User {
     @Column(name = "id", nullable = false) // 회원 id
     private int id;
 
-    @Column(name = "active_region_id", nullable = true) // 활동 지역 id
-    private int activeRegionId;
-
     @Column(name = "github_id", nullable = false, length = 39) // 깃허브 id
     private String githubId;
 
