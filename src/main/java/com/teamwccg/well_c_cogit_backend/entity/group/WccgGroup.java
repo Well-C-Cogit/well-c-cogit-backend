@@ -35,6 +35,9 @@ public class WccgGroup {
     @Column(name = "type", nullable = false)  // 유형 (ENUM: 기본, 스터디)
     private Enum.groupType type;
 
+    @Column(name = "group_image_url", nullable = true, length = 200)
+    private String groupImageUrl;
+
     @Column(name = "created_at", nullable = false) // 등록일
     private LocalDateTime createdAt;
 }
