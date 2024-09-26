@@ -30,6 +30,9 @@ public class Region {
     @Column(name = "x", nullable = false) // 경도
     private Double x;
 
+    @Column(name = "place_name", nullable = true, length = 255) // 장소명 (지역 검색 시 null)
+    private String placeName;
+
     @Column(name = "road_address_name", nullable = true, length = 50) // 도로명주소 (지역 검색 시 null)
     private String roadAddressName;
 
