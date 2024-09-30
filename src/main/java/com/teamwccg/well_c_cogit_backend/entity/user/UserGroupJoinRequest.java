@@ -1,6 +1,6 @@
 package com.teamwccg.well_c_cogit_backend.entity.user;
 
-import com.teamwccg.well_c_cogit_backend.entity.Enum;
+import com.teamwccg.well_c_cogit_backend.enums.GroupEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +25,7 @@ public class UserGroupJoinRequest {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "state", nullable = false) // 상태 (ENUM: 대기, 승인, 거절)
-    private Enum.joinState state;
+    private GroupEnum.groupJoinState state;
 
     @Column(name = "created_at", nullable = false) // 등록일
     private LocalDateTime createdAt;

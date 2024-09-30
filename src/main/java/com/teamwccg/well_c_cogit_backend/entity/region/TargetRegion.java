@@ -1,6 +1,6 @@
 package com.teamwccg.well_c_cogit_backend.entity.region;
 
-import com.teamwccg.well_c_cogit_backend.entity.Enum;
+import com.teamwccg.well_c_cogit_backend.enums.targetEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,5 +24,5 @@ public class TargetRegion {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false) // 유형 (ENUM: 회원, 모임)
-    private Enum.targetType type;
+    private targetEnum.targetType type;
 }

@@ -1,6 +1,6 @@
 package com.teamwccg.well_c_cogit_backend.entity.medal;
 
-import com.teamwccg.well_c_cogit_backend.entity.Enum;
+import com.teamwccg.well_c_cogit_backend.enums.targetEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +25,7 @@ public class MedalGrant {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false) // 유형 (ENUM: 회원, 모임)
-    private Enum.targetType type;
+    private targetEnum.targetType type;
 
     @Column(name = "name", nullable = false, length = 50) // 수여 이름 (예: N월 N주차 상위 30)
     private String name;

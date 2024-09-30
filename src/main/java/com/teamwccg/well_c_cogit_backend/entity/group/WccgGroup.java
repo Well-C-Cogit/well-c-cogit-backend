@@ -1,6 +1,6 @@
 package com.teamwccg.well_c_cogit_backend.entity.group;
 
-import com.teamwccg.well_c_cogit_backend.entity.Enum;
+import com.teamwccg.well_c_cogit_backend.enums.GroupEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,7 +33,7 @@ public class WccgGroup {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false)  // 유형 (ENUM: 기본, 스터디)
-    private Enum.groupType type;
+    private GroupEnum.groupType type;
 
     @Column(name = "group_image_url", nullable = true, length = 200)
     private String groupImageUrl;

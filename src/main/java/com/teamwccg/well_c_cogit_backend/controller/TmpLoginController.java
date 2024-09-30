@@ -9,11 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class UserController {
+public class TmpLoginController {
 
     private final OAuth2TokenService oAuth2TokenService;
 
-    public UserController(OAuth2TokenService oAuth2TokenService) {
+    public TmpLoginController(OAuth2TokenService oAuth2TokenService) {
         this.oAuth2TokenService = oAuth2TokenService;
     }
 

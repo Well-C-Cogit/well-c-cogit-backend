@@ -1,6 +1,7 @@
 package com.teamwccg.well_c_cogit_backend.entity.medal;
 
-import com.teamwccg.well_c_cogit_backend.entity.Enum;
+import com.teamwccg.well_c_cogit_backend.enums.targetEnum;
+import com.teamwccg.well_c_cogit_backend.enums.MedalEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,14 +23,14 @@ public class Medal {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "tier", nullable = false) // 메달 등급 (ENUM: 브론즈, 실버, 골드 등)
-    private Enum.medalTier tier;
+    private MedalEnum.medalTier tier;
 
     @Column(name = "introduce", nullable = true, length = 200) // 메달 소개 (예: 100일 연속 커밋)
     private String introduce;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false) // 수여 대상 구분 (ENUM: 유저, 그룹, 모두)
-    private Enum.targetTypeAll type;
+    private targetEnum.targetTypeAll type;
 
     @Column(name = "created_at", nullable = false) // 생성일
     private LocalDateTime createdAt;
