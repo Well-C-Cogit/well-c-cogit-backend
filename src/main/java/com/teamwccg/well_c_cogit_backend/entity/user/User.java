@@ -1,5 +1,6 @@
 package com.teamwccg.well_c_cogit_backend.entity.user;
 
+import com.teamwccg.well_c_cogit_backend.enums.ProgrammingLanguageEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,8 +31,9 @@ public class User {
     @Column(name = "profile_image_url", nullable = true, length = 200) // 프로필 이미지 URL (이미지 주소)
     private String profileImageUrl;
 
-    @Column(name = "main_language", nullable = true, length = 30) // 주 사용 언어
-    private String mainLanguage;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "main_language", nullable = true) // 주 사용 언어
+    private ProgrammingLanguageEnum.ProgrammingLanguage mainLanguage;
 
     @Column(name = "created_at", nullable = false) // 등록일
     private LocalDateTime createdAt;

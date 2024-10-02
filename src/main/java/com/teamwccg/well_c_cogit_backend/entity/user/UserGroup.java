@@ -7,7 +7,9 @@ import java.time.LocalDateTime;
 
 // 회원 모임
 @Entity
-@Table(name = "user_group")
+@Table(name = "user_group", indexes = {
+        @Index(name = "idx_user_id", columnList = "user_id") // userId 필드에 인덱스 추가
+})
 @Getter
 @Setter
 public class UserGroup {

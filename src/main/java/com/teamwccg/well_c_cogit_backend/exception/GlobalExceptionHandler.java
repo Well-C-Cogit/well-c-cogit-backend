@@ -14,7 +14,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleBadRequest(IllegalArgumentException ex) {
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
-                .body("400 Bad Request");
+                .body("400 Bad Request: " + ex.getMessage());
     }
 
     // 401 Unauthorized 처리
@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleUnauthorized(Exception ex) {
         return ResponseEntity
                 .status(HttpStatus.UNAUTHORIZED)
-                .body("401 Unauthorized");
+                .body("401 Unauthorized" + ex.getMessage());
     }
 
     // 403 Forbidden 처리
@@ -31,15 +31,15 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleForbidden(Exception ex) {
         return ResponseEntity
                 .status(HttpStatus.FORBIDDEN)
-                .body("403 Forbidden");
+                .body("403 Forbidden" + ex.getMessage());
     }
 
     // 404 Not Found 처리
-    @ExceptionHandler(NoHandlerFoundException.class)
-    public ResponseEntity<String> handleNotFound(NoHandlerFoundException ex) {
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<String> handleRuntimeException(RuntimeException ex) {
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body("404 Not Found");
+                .body("404 Not Found: " + ex.getMessage());
     }
 
     // 500 Internal Server Error 처리
@@ -47,6 +47,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleInternalServerError(Exception ex) {
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body("500 Internal Server Error");
+                .body("500 Internal Server Error: " + ex.getMessage());
     }
 }

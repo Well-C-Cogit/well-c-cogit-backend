@@ -1,4 +1,4 @@
-package com.teamwccg.well_c_cogit_backend.dto.ResponseDTO.repository;
+package com.teamwccg.well_c_cogit_backend.dto.ResponseDTO.commit;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -7,7 +7,10 @@ import java.time.LocalDateTime;
 
 // 커밋
 @Entity
-@Table(name = "commit")
+@Table(name = "commit", indexes = {
+        @Index(name = "idx_user_id", columnList = "user_id"), // userId 필드에 대한 인덱스 유지
+        @Index(name = "idx_user_created", columnList = "user_id, created_at") // userId와 created_at 필드에 대한 복합 인덱스 추가
+})
 @Getter
 @Setter
 public class Commit {

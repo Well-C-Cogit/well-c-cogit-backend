@@ -1,6 +1,5 @@
 package com.teamwccg.well_c_cogit_backend.dto.ResponseDTO.commit;
 
-import com.teamwccg.well_c_cogit_backend.dto.ResponseDTO.repository.RepositoryInfoDTO;
 import com.teamwccg.well_c_cogit_backend.dto.ResponseDTO.user.UserInfoSimpleDTO;
 import lombok.Getter;
 import lombok.Setter;
